@@ -12,7 +12,7 @@
                 <div class="col-md-5">
                     <div class="bg-light mb-3" style="padding: 30px;">
                         <h6 class="font-weight-bold">Get in touch</h6>
-                        <p>{{$getData->content}}</p>
+                        <p>{{$getData->content ?? ''}}</p>
                         <div class="d-flex align-items-center mb-3">
                             <i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
                             <div class="d-flex flex-column">
