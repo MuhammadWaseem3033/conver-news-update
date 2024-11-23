@@ -1,12 +1,4 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-
-    # Redirect to public/index.php
-    RewriteRule ^index\.php$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^ index.php [L]
-
-    # Prevent directory listing
-    Options -Indexes
+    RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
