@@ -1,8 +1,21 @@
-<IfModule mod_rewrite.c>
+<!-- <IfModule mod_rewrite.c>
     RewriteEngine On
 
     # Admin route ke liye exception rule
     # RewriteRule ^admin - [L] 
     
     RewriteRule ^(.*)$ public/$1 [L]
+</IfModule> -->
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect to public/index.php
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+
+    # Prevent directory listing
+    Options -Indexes
 </IfModule>
