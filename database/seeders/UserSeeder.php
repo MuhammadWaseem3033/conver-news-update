@@ -17,24 +17,24 @@ class UserSeeder extends Seeder
             'name' => 'Admin User',
             'email' => 'covernewsupate@gmail.com',
             'password' => bcrypt('Pass3132@'),
-            'role' => 'admin',
+            // 'role' => 'admin',
             'email_verified_at' => now(),
         ]);
 
-        User::create([
-            'name' => 'Author User',
-            'email' => 'author@gmail.com',
-            'password' => bcrypt('password'),
-            'role' => 'author',
-            'email_verified_at' => now(),
-        ]);
+        // User::create([
+        //     'name' => 'Author User',
+        //     'email' => 'author@gmail.com',
+        //     'password' => bcrypt('password'),
+        //     // 'role' => 'author',
+        //     'email_verified_at' => now(),
+        // ]);
 
-        User::create([
-            'name' => 'Reader User',
-            'email' => 'reader@example.com',
-            'password' => bcrypt('password'),
-            'role' => 'reader',
-            'email_verified_at' => now(),
-        ]);
+        // User::create([
+        //     'name' => 'Reader User',
+        //     'email' => 'reader@example.com',
+        //     'password' => bcrypt('password'),
+        //     // 'role' => 'reader',
+        //     'email_verified_at' => now(),
+        // ]);
     }
 }
