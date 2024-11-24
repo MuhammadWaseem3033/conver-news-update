@@ -15,7 +15,7 @@ class CommentsSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::where('role', 'reader')->first();
+        $user = User::first();
         $article = News::first();
 
         Comments::create([

@@ -15,7 +15,7 @@ class NewsSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::where('role', 'author')->first();
+        $user = User::first();
         $category = Category::first();
 
         News::create([
