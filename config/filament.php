@@ -1,11 +1,7 @@
 <?php
 
 return [
-
-    'auth' => [
-        'guard' => 'web', // Ya aapka configured guard
-    ],
-
+    
     /*
     |--------------------------------------------------------------------------
     | Broadcasting
