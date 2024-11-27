@@ -18,7 +18,7 @@
     <div class="row align-items-center bg-light px-lg-5">
         <div class="col-12 col-md-8">
             <div class="d-flex justify-content-between">
-                <div class="bg-primary text-white text-center py-2" style="width: 100px;">Tranding</div>
+                <div class="bg-primary text-white text-center py-2" style="width: 10rem;">Tranding News</div>
                 <div class="owl-carousel owl-carousel-1 tranding-carousel position-relative d-inline-flex align-items-center ml-3"
                     style="width: calc(100% - 100px); padding-left: 90px;">
                     @forelse ($categories as $category)
@@ -87,6 +87,7 @@
         <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0 justify-content-center w-100">
                 <a href="{{ route('index') }}" class="nav-item nav-link">Home</a>
+                <a href="{{ route('all.news') }}" class="nav-item nav-link">News</a>
                 {{-- @dd($categories) --}}
 
                 @forelse ($categories as $category)
@@ -100,7 +101,7 @@
                     </a>
                 @empty
                 @endforelse
-                <a href="{{ route('contect.us') }}" class="nav-item nav-link">Contact</a>
+                {{-- <a href="{{ route('contect.us') }}" class="nav-item nav-link">Contact</a> --}}
             </div>
             {{-- <div class="input-group ml-auto" style="width: 100%; max-width: 300px;">
                  <input type="text" class="form-control" placeholder="Keyword">

@@ -20,13 +20,13 @@
     <div class="row">
         <div class="col-lg-3 col-md-6 mb-5">
             <a href="{{ route('index') }}" class="text-decoration-none">
-                <h1 class="text-uppercase mb-3" style="font-size: 1.6rem">Cover<span class="text-primary"> News </span>
+                <h1 class=" h4 text-uppercase mb-3" style="font-size: 1.6rem">Cover<span class="text-primary"> News </span>
                     Update</h1>
             </a>
             <p style="color:#000">Stay updated with the latest news, stories, and exclusive content. Cover News Update is
                 your trusted source for timely and relevant news.</p>
 
-            <div class="d-flex justify-content-start mt-4">
+            {{-- <div class="d-flex justify-content-start mt-4">
                 <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;"
                     href="#"><i class="fab fa-twitter"></i></a>
                 <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;"
@@ -37,7 +37,7 @@
                     href="#"><i class="fab fa-instagram"></i></a>
                 <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;"
                     href="#"><i class="fab fa-youtube"></i></a>
-            </div>
+            </div> --}}
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
             <h4 class="font-weight-bold mb-4">Categories</h4>
@@ -61,19 +61,19 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
-            <h4 class="font-weight-bold mb-4">Quick Links</h4>
+            <h4 class="font-weight-bold mb-4">Pages</h4>
             <div class="d-flex flex-column justify-content-start font-weight-set">
+                <a class="text-secondary" href="{{ route('contect.us') }}"><i
+                        class="fa fa-angle-right text-dark mr-2"></i>Contact us</a>
                 <a class="text-secondary mb-2" href="{{ route('about.us') }}"><i
-                        class="fa fa-angle-right text-dark mr-2"></i>About</a>
-                <a class="text-secondary mb-2" href="#"><i
-                        class="fa fa-angle-right text-dark mr-2"></i>Advertise</a>
+                        class="fa fa-angle-right text-dark mr-2"></i>About us</a>
                 <a class="text-secondary mb-2" href="{{ route('privacy.and.policy') }}"><i
                         class="fa fa-angle-right text-dark mr-2"></i>Privacy & policy</a>
                 <a class="text-secondary mb-2" href="{{ route('terms.conditions') }}"><i
                         class="fa fa-angle-right text-dark mr-2"></i>Terms &
                     conditions</a>
-                <a class="text-secondary" href="{{ route('contect.us') }}"><i
-                        class="fa fa-angle-right text-dark mr-2"></i>Contact us</a>
+                <a class="text-secondary mb-2" href="#"><i
+                        class="fa fa-angle-right text-dark mr-2"></i>Advertise</a>
             </div>
         </div>
     </div>

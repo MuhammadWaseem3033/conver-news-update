@@ -12,6 +12,10 @@ class Privacyandpolicy extends Component
     public function mount()
     {
         $this->getData = Policy::get()->first();
+        view()->share('title', 'Privacy and Policy');
+        view()->share('metatitle','');
+        view()->share('keywords', '');
+        view()->share('description', '');
     }
 
     public function render()

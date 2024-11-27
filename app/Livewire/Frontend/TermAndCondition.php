@@ -12,6 +12,10 @@ class TermAndCondition extends Component
     public function mount()
     {
         $this->getData = TermAndConditions::get()->first();
+        view()->share('title', 'Terms and Conditions');
+        view()->share('metatitle','');
+        view()->share('keywords', '');
+        view()->share('description', ''); 
     }
 
     public function render()

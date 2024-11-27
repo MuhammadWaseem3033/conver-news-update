@@ -11,6 +11,10 @@ class NewsPage extends Component
     public function mount()
     {
         $this->News = News::getNews();
+        view()->share('title', 'All News');
+        view()->share('metatitle','');
+        view()->share('keywords', '');
+        view()->share('description', '');
     }
 
     public function render()
