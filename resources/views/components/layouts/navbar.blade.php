@@ -87,7 +87,7 @@
         <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0 justify-content-center w-100">
                 <a href="{{ route('index') }}" class="nav-item nav-link">Home</a>
-                <a href="{{ route('all.news') }}" class="nav-item nav-link">News</a>
+                {{-- <a href="{{ route('all.news') }}" class="nav-item nav-link">News</a> --}}
                 {{-- @dd($categories) --}}
 
                 @forelse ($categories as $category)
