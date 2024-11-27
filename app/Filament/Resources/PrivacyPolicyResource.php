@@ -22,7 +22,9 @@ class PrivacyPolicyResource extends Resource
 {
     protected static ?string $model = Policy::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Pages';
+    protected static ?int $navigationSort = 3;
+    protected static ?string $navigationIcon = 'heroicon-o-arrow-right';
 
     public static function form(Form $form): Form
     {
