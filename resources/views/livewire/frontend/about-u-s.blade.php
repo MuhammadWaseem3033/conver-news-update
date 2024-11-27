@@ -9,9 +9,8 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="bg-light mb-3" style="padding: 30px;">
-                        <h6 class="font-weight-bold">Get in touch</h6>
-                <p>{{$getData->content}}</p>
+                    <div class="bg-light mb-3 text-dark" style="padding: 30px;">
+                        <div>{!! $getData->content ?? ''!!}</div>
                     </div>
                 </div>
 

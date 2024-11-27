@@ -6,12 +6,12 @@
     <div class="container-fluid py-3">
         <div class="container">
             <div class="bg-light py-2 px-4 mb-3">
-                <h3 class="m-0">Our Terms and Conditions</h3>
+                <h3 class="m-0 text-center">Our Terms and Conditions</h3>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="bg-light mb-3" style="padding: 30px;">
-                        <p>{{$getData->content}}</p>
+                    <div class="bg-light mb-3 text-dark" style="padding: 30px;">
+                        <div>{!! $getData->content ?? ''!!}</div>
                     </div>
                 </div>
 

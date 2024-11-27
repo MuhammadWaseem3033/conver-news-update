@@ -10,8 +10,8 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="bg-light mb-3" style="padding: 30px;">
-                        <p>{{$getData->content}}</p>
+                    <div class="bg-light mb-3 text-dark" style="padding: 30px;">
+                        <div>{!! $getData->content ?? ''!!}</div>
                     </div>
                 </div>
             </div>
