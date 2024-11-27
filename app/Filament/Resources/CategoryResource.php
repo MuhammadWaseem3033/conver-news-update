@@ -34,7 +34,7 @@ class CategoryResource extends Resource
                 ->withCount()
                 ->searchable()
                 ->enableBranchNode(),
-                TextInput::make('desciption'),
+                TextInput::make('description'),
             ]);
     }
 
