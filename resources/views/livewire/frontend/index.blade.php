@@ -431,9 +431,11 @@
                     <!-- Newsletter End -->
 
                     <!-- Ads Start -->
-                    <div class="mb-3 pb-3">
+                    {{-- <div class="mb-3 pb-3">
                         <a href=""><img class="img-fluid" src="img/news-500x280-4.jpg" alt=""></a>
-                    </div>
+                    </div> --}}
+                    @include('components.Ads.headerAds')
+
                     <!-- Ads End -->
 
                     <!-- Popular News Start -->
@@ -460,7 +462,7 @@
                     <!-- Popular News End -->
 
                     <!-- Tags Start -->
-                  @include('components.tags-component')
+                    @include('components.tags-component')
                     <!-- Tags End -->
                 </div>
             </div>

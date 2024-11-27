@@ -50,14 +50,25 @@
             </div>
         </div>
     </div>
-    <div class="row align-items-center py-2 px-lg-5">
+    @if(View::exists('components.Ads.headerAds') && !empty(View::make('components.Ads.headerAds')->render()))
+    <div class="row align-items-center py-2 px-lg-5 ">
         <div class="col-lg-4">
-            <a href="{{ route('index') }}" class="navbar-brand d-none d-lg-block">
-                <h1 class="m-0 display-5 text-uppercase">Cover<span class="text-primary"> News </span> Update</h1>
+            <a href="{{ route('index') }}" class="navbar-brand d-none d-lg-block ">
+                <h1 class="m-0  h2 text-uppercase ">Cover<span class="text-primary"> News </span> Update</h1>
             </a>
         </div>
         @include('components.Ads.headerAds')
     </div>
+    @else
+    <div class="row align-items-center py-2 px-lg-5 justify-content-center">
+        <div class="col-lg-4">
+            <a href="{{ route('index') }}" class="navbar-brand d-none d-lg-block ">
+                <h1 class="m-0  h2 text-uppercase ">Cover<span class="text-primary"> News </span> Update</h1>
+            </a>
+        </div>
+        {{-- @include('components.Ads.headerAds') --}}
+    </div>
+    @endif
 </div>
 <!-- Topbar End -->
 
