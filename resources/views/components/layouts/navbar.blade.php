@@ -1,5 +1,5 @@
 @php
-    $categories = \App\Models\Category::whereNull('parent_id')->with('subcategories')->has('news')->get();
+    $categories = \App\Models\Category::whereNull('parent_id')->with('subcategories')->get();
 
     $activeId = request()->id; // Current category or subcategory ID
     $currentCategory = $activeId ? \App\Models\Category::find($activeId) : null; // Current category/subcategory
