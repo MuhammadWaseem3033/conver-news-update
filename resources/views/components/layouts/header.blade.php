@@ -12,7 +12,7 @@
     <link rel="canonical" href="{{ url()->current() }}" />
     <meta name="google-site-verification" content="THEB9gGUUt_eH2xUQf4qpzw06ika-tCs89no2raq1fI" />
     <!-- Favicon -->
-    <link href="{{ asset('frontend/img/favicon.ico') }}" rel="icon">
+    <link href="{{ asset('frontend/img/icon-CNU.png') }}" rel="icon" title="cover news update">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
