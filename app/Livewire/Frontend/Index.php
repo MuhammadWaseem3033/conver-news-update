@@ -21,6 +21,11 @@ class Index extends Component
         $this->PopularNews = News::popularNews();
         $this->TrandingNews = News::TrandingNews();
         $this->LatestNews = News::getNews();
+
+        view()->share('title','Home | latest news , updated news , breaking news , world news');
+        view()->share('metatitle', '');
+        view()->share('keywords', 'breaking news, latest news, pakistan news , US news , world news');
+        view()->share('description', 'The Cover News Update - latest news and breaking news about Pakistan, world, sports, cricket, business, entertainment, weather, education, lifestyle; opinion & blog , with 24 x 7 updates');
         $this->allTags = getUniqueTags($this->Categories);
     }
 

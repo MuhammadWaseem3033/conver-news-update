@@ -27,7 +27,7 @@ Route::fallback(NotFound::class);
 // });
 
 Route::get('/', Index::class)->name('index');
-Route::get('/news/{slug?}/{id}', Categories::class)->name('category');
+Route::get('/{slug?}/{id}', Categories::class)->name('category');
 Route::get('/news/{slug}', CategoryPage::class)->name('category.all');
 Route::get('/news', NewsPage::class)->name('all.news');
 Route::get('/single-news/{slug}',SingleNews::class)->name('single.news');
