@@ -1,5 +1,5 @@
 @php
-    $categories = \App\Models\Category::whereNull('parent_id')->with('subcategories', 'news')->has('news')->get();
+    $categories = \App\Models\Category::whereNull('parent_id')->with('subcategories', 'news')->get();
     // Collect all tags from news and make them unique
     $allTags = $categories
         ->flatMap(function ($category) {
