@@ -35,6 +35,7 @@ class CategoryResource extends Resource
                 ->searchable()
                 ->enableBranchNode(),
                 TextInput::make('description'),
+                TextInput::make('slug'),
             ]);
     }
 
@@ -44,6 +45,7 @@ class CategoryResource extends Resource
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('parent.name'),
+                TextColumn::make('slug'),
                 TextColumn::make('description'),
             ])
             ->filters([
