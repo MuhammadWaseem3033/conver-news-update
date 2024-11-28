@@ -294,10 +294,7 @@
                         @endforeach
                     </div>
 
-                    <div class="mb-3 pb-3">
-                        <a href=""><img class="img-fluid w-100" src="{{ asset('frontend/img/ads-700x70.jpg') }}"
-                                alt=""></a>
-                    </div>
+                    @include('components.Ads.headerAds')
 
                     <div class="row">
                         <div class="col-12">
