@@ -3,7 +3,7 @@
         <div class="container">
             <div class="col-12">
                 <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                    <h1 class="m-0">News Tagged with: "{{ $tag }}"</h1>
+                    <h1 class="m-0">{{ $tag }} - News</h1>
 
                 </div>
             </div>

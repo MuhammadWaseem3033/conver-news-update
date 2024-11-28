@@ -55,6 +55,7 @@ class Category extends Model
         ->has('news')
         ->get();
     }
+    
     public static function getCategoryPage(){
         return self::with('subcategories')
         ->where('parent_id',null)       

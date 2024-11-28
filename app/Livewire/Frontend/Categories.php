@@ -12,15 +12,14 @@ class Categories extends Component
         $currentCategory,
         $categories,
         $subcategories,
+        $TagCategories,
         $popularNews,
         $TrandingNews,
         $allTags;
 
     public function mount($id)
     {
-
         $this->currentCategory = Category::find($id);
-
         // dd($this->currentCategory->parent_id);
         if ($this->currentCategory->parent_id) {
             // If subcategory, get its parent and siblings
@@ -87,7 +86,9 @@ class Categories extends Component
         view()->share('keywords', $this->currentCategory->meta_keyword);
         view()->share('description', $this->currentCategory->description);
 
-        $this->allTags = getUniqueTags($this->categories);
+        $this->TagCategories = Category::getCategory();
+        $this->allTags = getUniqueTags($this->TagCategories);
+        // dd($this->allTags);
     }
 
     public function render()
