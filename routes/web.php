@@ -21,11 +21,6 @@ use App\Models\TermAndConditions;
 //     return view('welcome');
 // });
 Route::fallback(NotFound::class);
-//     function () {
-//     return redirect('/'); // Redirect to home page
-//     // Or to show the custom 404 page:
-//     // return response()->view('errors.404', [], 404);
-// });
 
 Route::get('/', Index::class)->name('index');
 Route::get('/news/{slug?}/{id}', Categories::class)->name('category');
