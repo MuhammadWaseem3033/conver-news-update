@@ -131,7 +131,6 @@ class SitemapController extends Controller
             [
                 'url' => $baseUrl . '/',
                 'priority' => '1.0',
-                'type' => 'webpage',
                 'frequency' => 'daily',
                 'images' => [],
                 'lastmod' => now()->toAtomString(),
@@ -139,7 +138,6 @@ class SitemapController extends Controller
             [
                 'url' => $baseUrl . '/about-us',
                 'priority' => '0.9',
-                'type' => 'webpage',
                 'frequency' => 'daily',
                 'images' => [],
                 'lastmod' => now()->toAtomString(),
@@ -147,7 +145,6 @@ class SitemapController extends Controller
             [
                 'url' => $baseUrl . '/contact-us',
                 'priority' => '0.9',
-                'type' => 'webpage',
                 'frequency' => 'daily',
                 'images' => [],
                 'lastmod' => now()->toAtomString(),
@@ -157,8 +154,7 @@ class SitemapController extends Controller
         $categoryUrls = $categories->map(function ($category) use ($baseUrl) {
             return [
                 'url' => $baseUrl . '/news/' . $category->slug . '/' . $category->id,
-                'priority' => '0.8',
-                'type' => 'category',
+                'priority' => '0.8',                
                 'frequency' => 'weekly',
                 'images' => [],
                 'lastmod' => $category->updated_at
@@ -172,8 +168,7 @@ class SitemapController extends Controller
         $newsUrls = $news->map(function ($newsItem) use ($baseUrl) {
             return [
                 'url' => $baseUrl . '/news/' . $newsItem->slug,
-                'priority' => '0.8',
-                'type' => 'news',
+                'priority' => '0.8',               
                 'title' => $newsItem->title, // Title for news
                 'frequency' => 'daily',
                 'images' => [
