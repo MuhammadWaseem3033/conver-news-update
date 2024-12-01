@@ -19,9 +19,11 @@ class Categories extends Component
 
     public function mount($id)
     {
+        // dd($id);
         $this->currentCategory = Category::find($id);
         // dd($this->currentCategory->parent_id);
-        if ($this->currentCategory->parent_id) {
+       
+        if (!$this->currentCategory->parent_id) {
             // If subcategory, get its parent and siblings
             $this->categories = Category::whereNull('parent_id')
                 ->with(
@@ -86,9 +88,9 @@ class Categories extends Component
         view()->share('keywords', $this->currentCategory->meta_keyword);
         view()->share('description', $this->currentCategory->description);
 
-        $this->TagCategories = Category::getCategory();
-        $this->allTags = getUniqueTags($this->TagCategories);
-        // dd($this->allTags);
+       
+        $this->allTags = getUniqueTags($this->categories);
+       
     }
 
     public function render()

@@ -1,2 +1,10 @@
+User-agent: googlebot-news
+Allow: /
+
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://covernewsupdate.com/sitemap.xml
+
+Disallow: /admin
+Disallow: /login

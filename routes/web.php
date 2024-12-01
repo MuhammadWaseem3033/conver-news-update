@@ -2,6 +2,7 @@
 
 // use App\Livewire\Frontend\Category;
 
+use App\Http\Controllers\SitemapController;
 use App\Livewire\Frontend\AboutUS;
 use App\Livewire\Frontend\Categories;
 use App\Livewire\Frontend\CategoryPage;
@@ -27,7 +28,7 @@ Route::fallback(NotFound::class);
 // });
 
 Route::get('/', Index::class)->name('index');
-Route::get('/{slug?}/{id}', Categories::class)->name('category');
+Route::get('/news/{slug?}/{id}', Categories::class)->name('category');
 Route::get('/news/{slug}', CategoryPage::class)->name('category.all');
 Route::get('/news', NewsPage::class)->name('all.news');
 Route::get('/single-news/{slug}',SingleNews::class)->name('single.news');
@@ -38,4 +39,5 @@ Route::get('/privacy-and-policy',Privacyandpolicy::class)->name('privacy.and.pol
 Route::get('/terms-and-conditions',TermAndCondition::class)->name('terms.conditions');
 
 Route::get('/tags/{tag}', NewsByTag::class)->name('news.byTag');
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 // require __DIR__ . '/frontend.php';

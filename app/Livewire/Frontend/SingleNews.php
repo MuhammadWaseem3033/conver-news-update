@@ -16,7 +16,7 @@ class SingleNews extends Component
         $categories;
 
     public function mount($slug)
-    {
+    {        
         $this->SingleNews = News::where('slug', $slug)->get()->first();
         $this->popularNews = News::popularNews();
         $this->TrandingNews = News::TrandingNews();
@@ -27,8 +27,8 @@ class SingleNews extends Component
         view()->share('description', $this->SingleNews->meta_discription);
 
         $this->incrementView($this->SingleNews->id);
-        $this->categories = Category::getCategory();
 
+        $this->categories = Category::getCategory();
         $this->allTags = getUniqueTags($this->categories);
     }
 
