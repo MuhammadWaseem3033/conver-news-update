@@ -117,14 +117,88 @@ class SitemapController extends Controller
     //     return response($sitemap, 200)
     //         ->header('Content-Type', 'application/xml');
     // }
+    // public function index()
+    // {
+    //     $baseUrl = URL::to('/');
+
+    //     // Fetch data from database
+    //     $categories = DB::table('categories')->select('name','slug', 'id', 'updated_at')->get();
+    //     $news = DB::table('news')->select('title', 'slug', 'image', 'updated_at')->get();
+    //     $newsPages = DB::table('news')->get();
+
+    //     // Manual static pages
+    //     $manualPages = [
+    //         [
+    //             'url' => $baseUrl . '/',
+    //             'priority' => '1.0',
+    //             'frequency' => 'daily',
+    //             'images' => [],
+    //             'lastmod' => now()->toAtomString(),
+    //         ],
+    //         [
+    //             'url' => $baseUrl . '/about-us',
+    //             'priority' => '0.9',
+    //             'frequency' => 'daily',
+    //             'images' => [],
+    //             'lastmod' => now()->toAtomString(),
+    //         ],
+    //         [
+    //             'url' => $baseUrl . '/contact-us',
+    //             'priority' => '0.9',
+    //             'frequency' => 'daily',
+    //             'images' => [],
+    //             'lastmod' => now()->toAtomString(),
+    //         ],
+    //     ];
+    //     // Generate categories URLs
+    //     $categoryUrls = $categories->map(function ($category) use ($baseUrl) {
+    //         return [
+    //             'url' => $baseUrl . '/news/' . $category->slug . '/' . $category->id,
+    //             'priority' => '0.8',                
+    //             'frequency' => 'weekly',
+    //             'images' => [],
+    //             'lastmod' => $category->updated_at
+    //                 ? Carbon::parse($category->updated_at)->toAtomString()
+    //                 : now()->toAtomString(),
+    //             'title' => '' . $category->name, // Title for category
+    //         ];
+    //     })->toArray();
+
+    //     // Generate news URLs
+    //     $newsUrls = $news->map(function ($newsItem) use ($baseUrl) {
+    //         return [
+    //             'url' => $baseUrl . '/news/' . $newsItem->slug,
+    //             'priority' => '0.8',               
+    //             'title' => $newsItem->title, // Title for news
+    //             'frequency' => 'daily',
+    //             'images' => [
+    //                 [
+    //                     'url' => $baseUrl . '/storage/' . $newsItem->image, // Assuming `image` path is correct
+    //                     'title' => $newsItem->title, // Use news title for image title
+    //                 ],
+    //             ],
+    //             'lastmod' => $newsItem->updated_at
+    //                 ? Carbon::parse($newsItem->updated_at)->toAtomString()
+    //                 : now()->toAtomString(),
+    //         ];
+    //     })->toArray();
+
+    //     // Combine all URLs
+    //     $urls = array_merge($manualPages, $categoryUrls, $newsUrls);
+
+    //     // Generate XML
+    //     $sitemap = view('sitemap', compact('urls'));
+
+    //     return response($sitemap, 200)
+    //         ->header('Content-Type', 'application/xml');
+    // }
     public function index()
     {
         $baseUrl = URL::to('/');
 
         // Fetch data from database
-        $categories = DB::table('categories')->select('name','slug', 'id', 'updated_at')->get();
+        $categories = DB::table('categories')->select('name', 'slug', 'id', 'updated_at')->get();
         $news = DB::table('news')->select('title', 'slug', 'image', 'updated_at')->get();
-        $newsPages = DB::table('news')->get();
 
         // Manual static pages
         $manualPages = [
@@ -134,6 +208,7 @@ class SitemapController extends Controller
                 'frequency' => 'daily',
                 'images' => [],
                 'lastmod' => now()->toAtomString(),
+                'is_news' => false,
             ],
             [
                 'url' => $baseUrl . '/about-us',
@@ -141,6 +216,7 @@ class SitemapController extends Controller
                 'frequency' => 'daily',
                 'images' => [],
                 'lastmod' => now()->toAtomString(),
+                'is_news' => false,
             ],
             [
                 'url' => $baseUrl . '/contact-us',
@@ -148,19 +224,22 @@ class SitemapController extends Controller
                 'frequency' => 'daily',
                 'images' => [],
                 'lastmod' => now()->toAtomString(),
+                'is_news' => false,
             ],
         ];
+
         // Generate categories URLs
         $categoryUrls = $categories->map(function ($category) use ($baseUrl) {
             return [
                 'url' => $baseUrl . '/news/' . $category->slug . '/' . $category->id,
-                'priority' => '0.8',                
+                'priority' => '0.8',
                 'frequency' => 'weekly',
                 'images' => [],
                 'lastmod' => $category->updated_at
                     ? Carbon::parse($category->updated_at)->toAtomString()
                     : now()->toAtomString(),
-                'title' => '' . $category->name, // Title for category
+                'is_news' => true, // Indicate this is a news entry
+                'title' => $category->name,
             ];
         })->toArray();
 
@@ -168,18 +247,19 @@ class SitemapController extends Controller
         $newsUrls = $news->map(function ($newsItem) use ($baseUrl) {
             return [
                 'url' => $baseUrl . '/news/' . $newsItem->slug,
-                'priority' => '0.8',               
-                'title' => $newsItem->title, // Title for news
+                'priority' => '0.8',
+                'title' => $newsItem->title,
                 'frequency' => 'daily',
                 'images' => [
                     [
-                        'url' => $baseUrl . '/storage/' . $newsItem->image, // Assuming `image` path is correct
-                        'title' => $newsItem->title, // Use news title for image title
+                        'url' => $baseUrl . '/storage/' . $newsItem->image,
+                        'title' => $newsItem->title,
                     ],
                 ],
                 'lastmod' => $newsItem->updated_at
                     ? Carbon::parse($newsItem->updated_at)->toAtomString()
                     : now()->toAtomString(),
+                'is_news' => true, // Indicate this is a news entry
             ];
         })->toArray();
 
