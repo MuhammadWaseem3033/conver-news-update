@@ -22,8 +22,7 @@
                 <div class="owl-carousel owl-carousel-1 tranding-carousel position-relative d-inline-flex align-items-center ml-3"
                     style="width: calc(100% - 100px); padding-left: 90px;">
 
-                    @forelse ($categories as $category)
-
+                    @foreach ($categories as $category)
                         @foreach ($category->news as $item)
                             <div class="text-truncate">
                                 <a class="text-secondary text-dark" href="{{ route('single.news',$item->slug) }}">
@@ -31,12 +30,12 @@
                                 </a>
                             </div>
                         @endforeach
-                    @empty
+                    {{-- @empty
                         <div class="text-truncate"><a class="text-secondary" href="">Gubergren elitr amet eirmod
                                 et
                                 lorem diam elitr, ut est erat Gubergren elitr amet eirmod et lorem diam elitr, ut est
-                                erat</a></div>
-                    @endforelse
+                                erat</a></div> --}}
+                    @endforeach
 
 
                 </div>
