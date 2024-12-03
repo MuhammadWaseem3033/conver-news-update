@@ -19,8 +19,8 @@
                                 <span>{{ $SingleNews->created_at->format('F d, Y') }}</span>
                             </div>
                             <div>
-                                <h1 class="mb-3">Est stet amet ipsum stet clita rebum duo</h1>
-                                <p>{!! $SingleNews->description !!}</p>
+                                <h1 class="mb-3">{{ $SingleNews->title }}</h1>
+                                <p class="text-dark">{!! $SingleNews->discription !!}</p>
                             </div>
                         </div>
                     </div>
