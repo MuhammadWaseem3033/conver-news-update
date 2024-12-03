@@ -1,6 +1,6 @@
 @php
-    $categories = \App\Models\Category::whereNull('parent_id')->with('subcategories')->get();
-
+    $categories = \App\Models\Category::whereNull('parent_id')->with('news','subcategories')->get();
+// dd($categories);
     $activeId = request()->id; // Current category or subcategory ID
     $currentCategory = $activeId ? \App\Models\Category::find($activeId) : null; // Current category/subcategory
     // dd($currentCategory);
@@ -21,10 +21,12 @@
                 <div class="bg-primary text-white text-center py-2" style="width: 10rem;">Tranding News</div>
                 <div class="owl-carousel owl-carousel-1 tranding-carousel position-relative d-inline-flex align-items-center ml-3"
                     style="width: calc(100% - 100px); padding-left: 90px;">
+
                     @forelse ($categories as $category)
+
                         @foreach ($category->news as $item)
                             <div class="text-truncate">
-                                <a class="text-secondary" href="{{ route('single.news',$item->slug) }}">
+                                <a class="text-secondary text-dark" href="{{ route('single.news',$item->slug) }}">
                                     {{ $item->title }}
                                 </a>
                             </div>
