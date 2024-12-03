@@ -18,7 +18,7 @@
     <div class="row align-items-center bg-light px-lg-5">
         <div class="col-12 col-md-8">
             <div class="d-flex justify-content-between">
-                <div class="bg-primary text-white text-center py-2" style="width: 10rem;">Tranding News</div>
+                <div class="bg-primary text-white text-center py-2" style="width: 10rem;">Tranding</div>
                 <div class="owl-carousel owl-carousel-1 tranding-carousel position-relative d-inline-flex align-items-center ml-3"
                     style="width: calc(100% - 100px); padding-left: 90px;">
 
@@ -36,8 +36,6 @@
                                 lorem diam elitr, ut est erat Gubergren elitr amet eirmod et lorem diam elitr, ut est
                                 erat</a></div> --}}
                     @endforeach
-
-
                 </div>
             </div>
         </div>
