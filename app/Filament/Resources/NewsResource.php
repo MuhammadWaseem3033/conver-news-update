@@ -49,6 +49,7 @@ class NewsResource extends Resource
             ->schema([
                 Section::make()->schema([
                     TextInput::make('title'),
+                    TextInput::make('slug'),
                     TextInput::make('meta_title'),
                     Textarea::make('meta_discription'),
 
