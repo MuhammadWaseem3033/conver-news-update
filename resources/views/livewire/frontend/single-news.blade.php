@@ -15,17 +15,16 @@
                         <div class="overlay position-relative bg-light">
                             <div class="mb-3">
                                 <a href="">Technology</a>
-                                <span class="px-1">/</span>
-                                <span>{{ $SingleNews->created_at->format('F d, Y') }}</span>
+                                <span class="px-1" style="color:black">/</span>
+                                <span style="color:black">{{ $SingleNews->created_at->format('F d, Y') }}</span>
                             </div>
                             <div>
                                 <h1 class="mb-3">{{ $SingleNews->title }}</h1>
-                                <p class="text-dark">{!! $SingleNews->discription !!}</p>
+                                <p class="text-dark" style="color:black">{!! $SingleNews->discription !!}</p>
                             </div>
                         </div>
                     </div>
                     <!-- News Detail End -->
-
                     <!-- Comment List Start -->
                     {{-- <div class="bg-light mb-3" style="padding: 30px;">
                         <h3 class="mb-4">3 Comments</h3>
