@@ -23,6 +23,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet">
 
+    @if (app()->environment('production'))        
     <script type="text/javascript">
         (function(c, l, a, r, i, t, y) {
             c[a] = c[a] || function() {
@@ -65,4 +66,5 @@
 
         gtag('config', 'G-GBF159VP79');
     </script>
+    @endif
 </head>

@@ -1,4 +1,4 @@
-<div>  
+<div>
 
     {{-- @dd($categories) --}}
     {{-- @dd($subcategories) --}}
@@ -19,7 +19,7 @@
                                     All</a>
                             </div>
                         </div>
-                        {{-- @dd($currentCategory->parent_id) --}}
+                        {{-- @dd($currentCategory) --}}
                         @if ($currentCategory->parent_id == null)
                             @foreach ($categories as $category)
                                 @foreach ($category->news->sortByDesc('created_at')->take(4) as $item)
@@ -50,6 +50,7 @@
                                 {{-- ads hare --}}
                             @endforeach
                         @else
+                            {{-- $subcategories --}}
                             @foreach ($subcategories as $category)
                                 @foreach ($category->news as $item)
                                     <div class="col-lg-6">
