@@ -20,7 +20,9 @@
                             </div>
                             <div>
                                 <h1 class="mb-3">{{ $SingleNews->title }}</h1>
-                                <p class="text-dark" style="color:black">{!! $SingleNews->discription !!}</p>
+                                <p class="text-dark" style="color:black">
+                                    {!! $SingleNews->discription !!}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -73,7 +75,7 @@
                     <!-- Comment Form End -->
                 </div>
 
-                @include('components.layouts.sidebar')  
+                @include('components.layouts.sidebar')
             </div>
         </div>
     </div>

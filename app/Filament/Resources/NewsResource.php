@@ -11,6 +11,7 @@ use Filament\Tables\Actions\Action;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
@@ -57,7 +58,7 @@ class NewsResource extends Resource
                         ->label('Status (Published or Unpublished)')
                         ->onColor('success')
                         ->offColor('danger'),
-                ])->columnSpan(1),
+                ])->columnSpan(1)->collapsible(),
 
                 Section::make()->schema([
                     SelectTree::make('category_id')
@@ -87,32 +88,48 @@ class NewsResource extends Resource
                         ]),
 
                     TagsInput::make('meta_keyword')
-                    ->default([])
-                    ->color('success')
-                    ->separator(',')
-                    ->nestedRecursiveRules([
-                        'min:3',
-                        'max:255',
-                    ])
-                    ,
+                        ->default([])
+                        ->color('success')
+                        ->separator(',')
+                        ->nestedRecursiveRules([
+                            'min:3',
+                            'max:255',
+                        ]),
 
                     FileUpload::make('image')
                         ->disk('public')
                         ->directory('News/images')
                         ->imageEditor(),
 
-                ])->columnSpan(1),
+                ])->columnSpan(1)->collapsible(),
 
-                Section::make()->schema([
-
-                    RichEditor::make('discription'),
+                Section::make()->schema([                    
+                    RichEditor::make('discription')
+                        ->toolbarButtons([
+                            'attachFiles',
+                            'blockquote',
+                            'bold',
+                            'bulletList',
+                            'codeBlock',
+                            'h1',
+                            'h2',
+                            'h3',                           
+                            'italic',
+                            'link',
+                            'orderedList',
+                            'redo',
+                            'strike',
+                            'table',
+                            'underline',
+                            'undo',
+                        ])
 
                 ])->columnSpanFull(),
 
-                TextInput::make('user_id')
+                Hidden::make('user_id')
                     ->default(fn() => Auth::id())
                     // ->hidden()
-                    ->readOnly(),
+                    ,
 
             ])->columns(2);
     }
