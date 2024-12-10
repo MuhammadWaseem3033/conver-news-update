@@ -198,7 +198,7 @@ class SitemapController extends Controller
 
         // Fetch data from database
         $categories = DB::table('categories')->select('name', 'slug', 'id', 'updated_at')->get();
-        $news = DB::table('news')->select('title', 'slug', 'image', 'updated_at')->get();
+        $news = DB::table('news')->select('title', 'slug', 'image', 'meta_keyword', 'updated_at')->get();
 
         // Manual static pages
         $manualPages = [
@@ -256,15 +256,17 @@ class SitemapController extends Controller
                         'title' => $newsItem->title,
                     ],
                 ],
-                'lastmod' => $newsItem->updated_at
-                    ? Carbon::parse($newsItem->updated_at)->toAtomString()
-                    : now()->toAtomString(),
-                'is_news' => true, // Indicate this is a news entry
+                'meta_keyword' => $newsItem->meta_keyword ? explode(',', $newsItem->meta_keyword) : [],
+                'lastmod' => $newsItem->updated_at ,
+                    // ? Carbon::parse($newsItem->updated_at)->toAtomString()
+                    // : now()->toAtomString(),
+                'is_news' => true, 
             ];
         })->toArray();
 
         // Combine all URLs
         $urls = array_merge($manualPages, $categoryUrls, $newsUrls);
+        // dd($urls);
 
         // Generate XML
         $sitemap = view('sitemap', compact('urls'));

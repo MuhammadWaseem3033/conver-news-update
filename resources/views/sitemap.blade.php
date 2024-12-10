@@ -56,8 +56,12 @@
                         <news:name>Cover News Update</news:name>
                         <news:language>en</news:language>
                     </news:publication>
+                    <news:genres>news</news:genres>
                     <news:publication_date>{{ $url['lastmod'] }}</news:publication_date>
                     <news:title>{{ $url['title'] }}</news:title>
+                    @if (!empty($url['meta_keyword']))
+                        <news:keywords>{{ implode(',', $url['meta_keyword']) }}</news:keywords>
+                    @endif
                 </news:news>
             @endif
         </url>

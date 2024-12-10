@@ -39,10 +39,9 @@
                                                         {{ $item->created_at->format('F d, Y') }}
                                                     </span>
                                                 </div>
-                                                <a class="h4"
-                                                    href="{{ route('single.news', $item->slug) }}">{{ $item->title ?? 'coming soon .......' }}
+                                                <a class="h6" href="{{ route('single.news', $item->slug) }}">{{ $item->title ?? 'coming soon .......' }}
                                                 </a>
-                                                <p class="m-0">{{ $item->meta_description ?? 'coming soon...' }}</p>
+                                                <p class="m-0">{{ $item->meta_description ?? '' }}</p>
                                             </div>
                                         </div>
                                     </div>
