@@ -50,14 +50,15 @@
                     </image:image>
                 @endforeach
             @endif
+            {{-- @dd($url['public_date']) --}}
             @if ($url['is_news'])
                 <news:news>
                     <news:publication>
                         <news:name>Cover News Update</news:name>
                         <news:language>en</news:language>
                     </news:publication>
-                    <news:genres>news</news:genres>
-                    <news:publication_date>{{ $url['lastmod'] }}</news:publication_date>
+                    <news:genres>News</news:genres>
+                    <news:publication_date>{{ \Carbon\Carbon::parse($url['lastmod'])->format('Y-m-d') }}</news:publication_date>
                     <news:title>{{ $url['title'] }}</news:title>
                     @if (!empty($url['meta_keyword']))
                         <news:keywords>{{ implode(',', $url['meta_keyword']) }}</news:keywords>
