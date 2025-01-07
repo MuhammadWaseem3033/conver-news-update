@@ -4,8 +4,8 @@
     @foreach ($urls as $url)
         <url>
             <loc>{{ $url['url'] }}</loc>
-            <priority>{{ $url['priority'] }}</priority>
-            <changefreq>{{ $url['frequency'] }}</changefreq>
+            {{-- <priority>{{ $url['priority'] }}</priority>
+            <changefreq>{{ $url['frequency'] }}</changefreq> --}}
             <lastmod>{{ $url['lastmod'] }}</lastmod>
             @if (!empty($url['images']))
                 @foreach ($url['images'] as $image)
