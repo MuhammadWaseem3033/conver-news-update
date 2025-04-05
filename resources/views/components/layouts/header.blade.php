@@ -66,5 +66,7 @@
 
         gtag('config', 'G-GBF159VP79');
     </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2432907108353060"
+     crossorigin="anonymous"></script>
     @endif
 </head>
