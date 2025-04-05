@@ -11,6 +11,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="canonical" href="{{ url()->current() }}" />
     <meta name="google-site-verification" content="THEB9gGUUt_eH2xUQf4qpzw06ika-tCs89no2raq1fI" />
+    {{-- google ads varification --}}
+    <meta name="google-adsense-account" content="ca-pub-2432907108353060">
     <!-- Favicon -->
     <link href="{{ asset('frontend/img/icon-CNU.png') }}" rel="icon">
     <!-- Google Web Fonts -->
